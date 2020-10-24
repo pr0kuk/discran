@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{mathtext}
+\title{Task №3}
+\author{Щербаков Алексей Б01-908}
+\date{1 October 2019}
+\begin{document}
+\maketitle
+\section{}
+$(A \rightarrow B) \vee (B \rightarrow A) = (\bar A \vee B) \vee (\bar B \vee A) = (\bar A \vee A) \vee (\bar B \vee B) -$ всегда истинно
+\\ "Если ветви параболы направлены вверх, то парабола пересекает 0 - очевидно ложно" не означает, что $A \rightarrow B = 0$.\\
+$A \rightarrow B = 0$, тогда и только тогда, когда парабола целиком выше 0\\
+Если парабола выше 0, очевидно, что $B = 0$, тогда $B \rightarrow A = 1$\\ В таком случае нет противоречий с данной в условии дизъюнкцией
+\section{}
+1) $A \rightarrow B = 1$\\
+2) $D \vee E = 1$\\
+3) $B \oplus C = 1$\\
+4) $C \oplus D = 0$\\
+5) $E \rightarrow (A \wedge D) = 1$ | $\bar E \vee (A \wedge D) = 1$ | $(\bar E \vee A) \wedge (\bar E \vee D) = 1$\\
+Из 2) и 5): $(\bar E \vee D) \wedge (E \vee D) = 1$. Значит $D = 1$\\
+$C = 1$ из 4)\\
+$B = 0$ из 3)\\
+$A = 1$ из 1)\\
+$E$ может как смотреть, так и не смотреть\\
+Ответ: $A, C, D$ - смотрят, $B$ - не смотрит, $E$ - нельзя точно определить
+\section{}
+Доказать: $x^2 - 6x + 5$ чётно $\rightarrow x$ нечётно\\
+$x$ чётно $\rightarrow x^2$ чётно\\
+$x^2$ чётно $\rightarrow x^2 - 6x$ чётно\\
+$x^2 - 6x$ чётно $\rightarrow x^2 - 6x + 5$ нечётно\\
+$(x$ чётно $\rightarrow x^2 - 6x + 5$ нечётно) $\rightarrow (x^2 - 6x + 5$ чётно $\rightarrow x$ нечётно) чтд\\
+\section{}
+Пусть $a \cdot b = c$, $a \in \mathbb{Q}, b \in \mathbb{I}$\\
+Доказать $c \in \mathbb{I}$\\
+$c \in \mathbb{Q} \rightarrow c = \frac{m}{n}, m \in \mathbb{Z}, n \in \mathbb{N}$\\
+$a \in \mathbb{Q} \rightarrow a = \frac{m_1}{n_1}, m_1 \in \mathbb{Z}, n_1 \in \mathbb{N}$\\
+$a \cdot b = c \rightarrow b = \frac{c}{a} = \frac{m \cdot n_1}{n \cdot m_1}$\\
+Пусть если $n \cdot m_1 > 0$, то $p = m \cdot n_1$,\\ а если $n \cdot m_1 < 0$, то $p = -m \cdot n_1$\\
+Пусть $k = |n \cdot m_1|$\\
+Заметим, что $k \in \mathbb{N}, p \in \mathbb{Z}$\\
+$b = \frac{p}{k} \rightarrow b \in \mathbb{Q}$\\\\
+$\frac{\neg(b \in \mathbb{Q}), c \in \mathbb{Q} \rightarrow b \in \mathbb{Q}}{c \notin \mathbb{Q}}$ чтд
+\section{}
+$C \backslash A \subseteq B$ и $C \backslash B \subseteq A$\\
+$B = A \cap C \rightarrow (B \subseteq A) \wedge (B \subseteq C)$\\
+$C \backslash A \subseteq A \cap C \rightarrow C \cap \bar A \subseteq C \cap A$\\
+$C \cap \bar A \subseteq C \cap A \rightarrow C \subset A$\\
+$(B = C \cap A) \rightarrow (C \backslash B = C \backslash C \cap C \backslash A = 0$)
+$(B = C \cap A) \rightarrow (C = B)$
+$C \neq B$
+$\frac{C \neq B, (B = C \cap A) \rightarrow (C = B)}{B \neq C \cap A}$
+\\Ответ: Невозможно
+\section{}
+а) $(n = 1)\rightarrow 1 \cdot (n-1) + 2 \cdot (n - 2) + ... + (n-1) \cdot 1 = \frac{(n-1)n(n+1)}{6} = 0$
+$(n = k) \rightarrow (k-1) + 2 \cdot (k - 2) + ... + (k-1)= \frac{(k-1)k(k+1)}{6} = 0$\\
+Для $n = k+1: k + 2 \cdot (k-1) + ... + k =\\= f(k) + k + 1 + k + k - 1 + k - 2 + k - 3 + ... + k - 3 + k - 2 + k - 1 + k + k + 1 =\\= f(k) + \sum\limits_{i=1}^k = f(k) + \frac{k(k+1)}{2} = \frac{(k-1)k(k+1)}{6} + \frac{3k(k+1)}{6} = \frac{k(k+1)(k+2)}{6}$\\
+((верно для $n = k \rightarrow$ верно для $n = k + 1$) $\wedge$ верно для $n = 1$) $\rightarrow$ верно для любого $n \in \mathbb{N} \geq 1$
+\\\\
+б) $(n = 1)\rightarrow \cos{x} + \cos{2x} + ... + \cos{nx} = \frac{\sin{nx+0.5x}}{2\sin {0.5x}} - 0.5 = \frac{\sin{1.5x} - \sin{0.5x}}{2\sin{0.5x}} = \frac{2\sin{0.5x}\cdot \cos{x}}{2\sin{0.5x}}=\cos{x}$
+$(n = k) \rightarrow \cos{x} + \cos{2x} + ... + \cos{kx} = \frac{\sin{kx+0.5x}}{2\sin {0.5x}} - 0.5$\\
+Для $n = k+1: \cos{x} + \cos{2x} + ... + \cos{kx} + \cos{(kx+x)} = f(k) + \cos{(kx+x)} = f(k) +  \cos{(kx+x)}=\\= \frac{\sin(nx+0.5x) + 2\sin{0.5x} \cos{(kx+x)}}{2\sin{0.5x}} - 0.5 =  \frac{\sin{(kx+1.5x)}}{2\sin{0.5x}} - 0.5 = \frac{\sin{(k+1)x + 0.5x}}{2\sin{0.5x}} - 0.5$\\
+((верно для $n = k \rightarrow$ верно для $n = k + 1$) $\wedge$ верно для $n = 1$) $\rightarrow$ верно для любого $n \in \mathbb{N} \geq 1$ чтд\\
+
+\section{}
+Рассмотрим момент, когда последний студент приходит на зачет.\\
+(ни один студент не покинул зачёт) $\rightarrow$ (условие выполнено)\\
+(часть студентов покинула зачёт) $\rightarrow$ ((все преподаватели поговорили со всеми покинувшеми зачёт) $\wedge$ (все преподаватели должны будут поговорить с последним студентом))\\
+((все преподаватели поговорили с частью студентов) $\wedge$ (все преподователи ещё должны поговорить с последним студентом) $\wedge$ (преподаватели не могут выходить и возвращаться)) $\rightarrow$ (все преподаватели в данный момент находятся в аудитории) чтд
+\section{}
+
+Ошибка в базе, так как словосочетание "одного цвета" следует понимать как "одинакового цвета", а для одной лошади нельзя определить понятие "одинакового цвета". Поэтому база должна быть не A(1), а A(2).
+
+
+\section{}
+
+База: $n = 1 \rightarrow $ очевидно верно\\
+Пусть $k = n \rightarrow $ верно\\
+Рассмотрим для $n = k+1$\\
+Рассотрим последний столбец\\
+1) Если этот столбец состоит из одного цвета, то поменяем любую фишку на другой цвет, такая всегда найдётся, так как каждого цвета n фишек. Переходим к шагу 2)\\
+2) Если в столбце две одинаковых фишки, то поменяем одну из этих двух фишек на 3й цвет, такой всегда найдётся, так как по n фишек каждого цвета.
+Мы создали правильный последний столбец для $n = k + 1$, остался прямоугольник $3 \times n$, который мы умеем преобразовывать.
+((верно для $n = k \rightarrow$ верно для $n = k + 1$) $\wedge$ верно для $n = 1$) $\rightarrow$ верно для любого $n \in \mathbb{N} \geq 1$ чтд\\
+\end{document}

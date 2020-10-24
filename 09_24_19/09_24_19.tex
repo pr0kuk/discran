@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{mathtext}
+\title{Task №2}
+\author{Щербаков Алексей Б01-908}
+\date{24 September 2019}
+\begin{document}
+\maketitle
+\section{}
+Верно ли, что для любых множеств \textit{A} и \textit{B} выполняется равенство \\ 
+$(A \backslash B) \cap ((A \cup B) \backslash (A \cap B)) = A \backslash B$
+\\ \\
+$(A \backslash B) \cap ((A \cup B) \backslash (A \cap B)) = (A \backslash B) \cap (A \bigtriangleup B) = (A \backslash B)$ - верно
+\section{}
+Верно ли, что для любых множеств $A, B$ и $C$ выполняется равенство \\ 
+$((A \backslash B) \cup (A \backslash C)) \cap (A \backslash (B \cap C)) = A \backslash (B \cup C)$
+\\ \\
+$((A \backslash B) \cup (A \backslash C)) \cap (A \backslash (B \cap C)) = (A \backslash (A \cap B \cap C) \cap (A \backslash ( B \cap C)) = (A \backslash (A \cap B \cap C))$, что очевидно не равно $A \backslash (B \cup C)$\\ Например, если $x\in (A \cap B \backslash C)$, то x принадлежит левой части и не принадлежит правой
+\section{}
+Верно ли, что для любых множеств $A, B$ и $C$ выполняется равенство\\ $(A \cap B) \backslash C = (A\backslash C) \cap (B\backslash C)$
+\\ \\
+В левой части находятся все элементы множеств $A$ и $B$, не входящие в $C$; \\ В правой части находятся все элементы $A$, не входящие в $C$, и элементы $B$, не входящие в C. \\ Очевидно, что правая и левая части равны.
+\\ Ответ: Верно
+\section{}
+Верно ли, что для любых множеств $A$ и $B$ выполняется включение \\ $(A \cup B) \backslash (A \backslash B) \subseteq B$
+\\
+\\
+Во множестве $(A \backslash B)$ находятся все элементы, не входящие в $B$.\\
+Соответственно в $(A \cup B) \backslash (A \backslash B)$ находятся все элементы, не входящие в $A$. \\ Следовательно все элементы $(A \cup B) \backslash (A \backslash B)$ входят в $B$.
+
+\section{}
+Пусть $P=[10;40]; Q=[20;30];$ известно, что отрезок $A$ удовлетворяет соотношению
+$((x \in A) \rightarrow (x \in P)) \wedge ((x \in Q) \rightarrow (x \in A))$
+\\
+\\
+\begin{equation*}
+ \begin{cases}
+   $((x \notin A) \vee (x \in P)) = 1$\\
+   $((x \notin Q) \vee (x \in A)) = 1$\\
+ \end{cases}
+\end{equation*}
+Если $x$ лежит в $A$, то он лежит в $P$, если $x$ лежит в $Q$, то он лежит в $A$
+//
+Отрезок $A$ целиком лежит в $P$\\
+1. Максимальный отрезок $A = P$. Ответ: 30\\
+2. Минимальный отрезок $A = Q$. Ответ: 10
+\section{}
+Пусть множества $A, B, X, Y$ известно, что $A \cap X =   B \cap X, A\cup Y = B\cup Y.$
+\\Верно ли, что $A \cup (Y\backslash X) = B \cup (Y \backslash X)?$
+\\
+\\
+$A \cup (Y \backslash X) = A \cup (Y \cap \bar X) = (A \cup Y) \cap (A \cup \bar X)$
+\\ \\
+Докажем, что $(A \cup \bar X) = (B \cup \bar X)$.\\ Путь $\alpha \notin X$, тогда верно.\\Пусть $\alpha \in X$: Если $\alpha \in (A \cap X)$, то верно по уловию, если $\alpha \notin (A \cap X)$, то из условия следует, что $\alpha \notin (B \cap X)$ Т.к. $A \cap X = B \cap X$.
+\\Значит $(A \cup \bar X) = (B \cup \bar X)$
+\\ 
+\\
+$(A \cup \bar X) = (B \cup \bar X) = (A \cup B \cup Y)$\\
+$(A \cup Y) = (B \cup Y)$ по условию
+\\Следовательно $(A\cup Y) \cap (A\cup \bar X) = (B\cup Y) \cap (B\cup \bar X)$
+\\Следовательно $A \cup (Y\backslash X) = B \cup (Y \backslash X)$ верно.
+\\Ответ: Верно.
+
+\section{}
+Пусть $A_1 \supseteq A_2 \supseteq A_3... \supseteq A_n$.\\ 
+Известно, что $A_1 \backslash A_4 = A_6 \backslash A_9$
+\\Доказать, что $A_2\backslash A_7 = A_3 \backslash A_8$\\
+Пусть $A_1\backslash A_2=a_1, A_2\backslash A_3=a_2$ и тд.\\
+Доказать: $a_2+a_3+a_4+a_5+a_6=a_3+a_4+a_5+a_6+a_7$\\
+Доказать: $a_2=a_7$
+\\
+\\
+$a_1\cup a_2\cup a_3=a_6\cup a_7\cup a_8$\\
+Так как последовательность невозрастающая,\\ следовательно $a_1=a_2=a_3=a_6=a_7=a_8=\emptyset$ чтд.\\
+\section{}
+Пусть $A,B,C,D$ - такие отрезки прямой, что $A \bigtriangleup B = C \bigtriangleup D$ (симметриеские разности равны). Верно ли, что выполняется включение\\
+$A\cap B\subseteq C$
+\\
+\\
+Не верно:
+\\Пример: $A=[0;10], B=[0;20], C=[10;30], D=[20;30]$
+\\$A \bigtriangleup B = C \bigtriangleup D = [10;20]$
+\\Но $A\cap B = [0;10] не принадлежит [10;30]$
+\\Ответ: не верно
+\end{document}

@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[all]{xy}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{mathtext}
+\title{Task №13-14}
+\author{Щербаков Алексей Б01-908}
+\date{10 Dec 2019}
+\begin{document}
+\maketitle
+\section{13.1}
+Найдите производящую функцию для последовательности\\
+а) $a_k=k$: $\sum\limits_{k=0}^{\infty}kx^k=x(\sum\limits_{k=0}^{\infty}kx^k)'=x(\frac{1}{1-x})'=\frac{x}{(1-x)^2}$\\\\
+б) $a_k=\frac{1}{k!}$: $\sum\limits_{k=0}^{\infty}\frac{x^k}{k!}=e^x$
+\section{13.2}
+Выразите аналитически:\\
+в)$\sum\limits_{k\geqslant1}(2k+1)x^k$\\
+Пусть $f(x)=\frac{1}{1-x}$\\
+$f(x)=\sum\limits_{k\geqslant1}x^k \Longrightarrow f'(x)=\sum\limits_{k\geqslant1}kx^{k-1} \Longrightarrow 2f'(x)=\sum\limits_{k\geqslant1}2kx^{k-1} \Longrightarrow\\ 2xf'(x)+xf(x)=\sum\limits_{k\geqslant1}(2k+1)x^k$\\\\
+Ответ: $\frac{3x-x^2}{(1-x)^2}$
+\section{13.3}
+б)$\sum\limits_{k\geqslant0}k\cdot\text{C}^k_n2^kx^k=((1+2x)^n)'=2n(1+2x)^{n-1}$\\
+$\sum\limits_{k\geqslant0}k\cdot\text{C}^k_n2^k=A(1)=2n\cdot3^{n-1}$\\\\
+Ответ: $2n\cdot3^{n-1}$
+\section{13.4}
+Доказать: $\sum\limits_{k\geqslant0}k(k-1){n\choose k}=n(n-1)2^{n-2}$\\\\
+$(1+x)^{n}=\sum\limits_{k\geqslant0}{n\choose k}x^k$\\
+$((1+x)^{n})''= n(n-1)(1+x)^{n-2}=\sum\limits_{k\geqslant0}k(k-1){n\choose k}x^{k-2}$\\
+Если $f(x)=(1+x)^{n}$, то $f''(1)=n(n-1)2^{n-2}=\sum\limits_{k\geqslant0}k(k-1){n\choose k}$ чтд
+\section{13.5}
+Известна $g(x)$ для $S_n=\sum\limits_{k\geqslant0}a_k$. Найти $f(x)$ для $\{a_k\}$\\\\
+$g(x)=(a_0)+(a_0+a_1)x+(a_0+a_1+a_2)x^2+...+(a_0+a_1+a_2+...+a_n)x^n$\\
+$g(0)=a_0$\\
+$g'(0)=a_0+a_1 \rightarrow a_1=g'(0)-g(0)$\\
+...\\
+$g{(n)}(0)=a_0+a_1+a_2+...+a_n \rightarrow a_n=g^{(n)}(0)-g^{(n-1)}(0)$\\
+$a_k=g^{(k)}(0)-g^{(k-1)}(0) \Longrightarrow f(x)=\sum\limits_{k\geqslant0}(g^{(k)}(0)-g^{(k-1)}(0))x^k$\\\\
+Ответ: $\sum\limits_{k\geqslant0}(g^{(k)}(0)-g^{(k-1)}(0))x^k$
+\section{14.1}
+Найти производящую функцию для последовательности $F_n$ 
+\begin{equation*}
+$1)\text{ }F_n=$
+ \begin{cases}
+   \text{0, при }$n=0$\\
+   \text{1, при }$n=1$\\
+   $F_{n-1}+2F_{n-2}$, при $n>1$\\
+ \end{cases}
+\end{equation*}
+$F_{k+1}+F_k=2(F_{n-1}+F_{k})$. Пусть $G_k=F_{k+1}+F_k$, тогда $G_{k+1}=2G_k, G_0=1$. $G_k=2^k \Longrightarrow F_{k+1}+F_k = 2^k \Longrightarrow F_{k+1}=2^k-F_{k}$\\
+$A(x)=\sum\limits_{k\geqslant0}(2^k-F_{k})x^{k+1}=\sum\limits_{k\geqslant0}2^kx^{k+1}-x\sum\limits_{k\geqslant0}F_kx^{k}\\
+A(x)=xA(x)+\sum\limits_{k\geqslant0}2^kx^{k+1}=-xA(x)+\frac{x}{1-2x}$\\
+$A(x)=\frac{\frac{x}{1-2x}}{1+x}=\frac{x}{(1-2x)(1+x)} = \frac{1}{3-6x}-\frac{1}{3+3x}=\sum\limits_{k\geqslant0}(\frac{2^{k+1}+(-1)^k}{3})x^k$\\\\
+Ответ: $\sum\limits_{k\geqslant1}(\frac{2^{k}+(-1)^{k-1}}{3})x^{k}$\\\\\\\\
+$2)\text{ }F_n=$
+ \begin{cases}
+   \text{1, при }$n=0$\\
+   \text{3, при }$n=1$\\
+   $4F_{n-1}-4F_{n-2}$, при $n>1$\\
+ \end{cases}
+\end{equation*}
+$F_k-2F_{k-1}=2(F_{k-1}-2F_{k-2})$\\
+Пусть $G_k=F_{k+1}-2F_{k}$, тогда $G_{k+1}=2G_k, G_0=1 \Longrightarrow G_k=2^k \Longrightarrow F_{k+1}-2F_{k}=2^k\longrightarrow F_{k+1}=2^k+2F_k$\\
+$A(x)=1+\sum\limits_{k\geqslant0}(2^k+2F_k)x^{k+1}=1+2x\sum\limits_{k\geqslant0}F_{k}x^{k}+\sum\limits_{k\geqslant0}2^kx^{k+1}$\\
+$A(x)=\frac{1+x\sum\limits_{k\geqslant0}2^kx^{k}}{1-2x}=\frac{1}{1-2x}+\frac{x}{(1-2x)^2}=\sum\limits_{k\geqslant0}(k+1)2^kx^{k+1}+\sum\limits_{k\geqslant0}2^kx^{k}=1+\sum\limits_{k\geqslant1}(k2^{k-1}+2^k)x^{k}=1+\sum\limits_{k\geqslant1}2^{k-1}(k+2)x^{k}$\\\\
+Ответ: $1+\sum\limits_{k\geqslant1}2^{k-1}(k+2)x^{k}$
+\section{14.2}
+Докажите, что если последовательность an определяется соотношением
+$a_{n+2}+ pa_{n+1}+ qa_n = 0$,
+где $p, q$ – некоторые числа, то для её производящей функции $F(t)$ верно,
+что
+$F(t) = \frac{a_0 + (a_1 + pa_0)t}{1 + pt + qt^2}$\\
+\\
+$F(t)=\sum\limits_{n\geqslant0}a_nt^n$\\
+$ptF(t)=pt\sum\limits_{n\geqslant0}a_nt^n=\sum\limits_{n\geqslant1}pa_{n-1}t^n$\\
+$qt^2F(t)=pt\sum\limits_{n\geqslant0}a_nt^n=\sum\limits_{n\geqslant2}qa_{n-2}t^n$\\
+Сложив три эти равенства, получим:\\
+$F(t)(1+pt+qt^2)=a_0+a_1t+pta_0+\sum\limits_{n\geqslant2}(a_n+pa_{n-1}+qa_{n-2})t^n$\\
+$F(t)=\frac{a_0+a_1t+pta_0}{1+pt+qt^2}$ чтд
+\section{14.3}
+Найдите производящую функцию для последовательности $a_n$, состоящей из числа двоичных слов длины $n$, в которых нет двух единиц подряд.\\\\
+В задаче 3 задания 8 было доказано, что число таких двоичных слов длины $n$ равно $P(n+2)$, где $P(n)$ - число Фибоначчи с номером $n$.\\
+$a_k=a_{k-1}+a_{k-2}$\\
+Пусть производящая функция для $\{a_k\}: A(x)$\\
+Тогда $\frac{A(x)-P(0)-xP(1)}{x^2}=A(x)+\frac{A(x)-P(0)}{x}$, так как каждый коэффициент равен сумме двух предыдущих.\\
+$P(0)=0, P(1)=1,$ тогда $A(x)=\frac{x}{1-x-x^2}$\\
+Пусть корни знаменателя: $\alpha=\frac{1+\sqrt5}{2}$ и $\beta=\frac{1-\sqrt5}{2}$\\
+$A(x)=\frac{x}{-(x+\alpha)(x+\beta)}=-\frac{\alpha}{\sqrt{5}(x+\alpha)}+\frac{\beta}{\sqrt{5}(x+\beta)}=\frac{1}{\sqrt{5}}(-\frac{1}{\frac{x}{\alpha}+1}+\frac{1}{\frac{x}{\beta}+1})$\\
+По теореме Виета: $\alpha\beta = -1 \Longrightarrow \alpha=-\frac{1}{\beta}$\\
+$A(x)=\frac{1}{\sqrt{5}}(-\frac{1}{1-x\beta}+\frac{1}{1-x\alpha})$ - производящая функция разности сумм геометрических прогрессий с начальным членом $\frac{1}{\sqrt5}$ и знаменателями $\alpha$ и $\beta$\\
+Таким образом $A(x)=\sum\limits_{k\geqslant0}\frac{\alpha^kx^k}{\sqrt5}-\sum\limits_{k\geqslant0}\frac{\beta^kx^k}{\sqrt5}=\sum\limits_{k\geqslant0}\frac{\alpha^k-\beta^k}{\sqrt5}x^k$\\
+Так как искомая последовательность смещена на 2 номера от последовательности Фибоначчи, то начинать нужно с 3го элемента (так как $a_0=0)$
+\\Ответ:$\sum\limits_{k\geqslant3}\frac{(\frac{1+\sqrt5}{2})^k-(\frac{1-\sqrt5}{2})^k}{\sqrt5}x^k$
+\end{document}

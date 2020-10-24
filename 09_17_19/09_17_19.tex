@@ -1,0 +1,203 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{mathtext}
+\title{Task №1}
+\author{Щербаков Алексей Б01-908}
+\date{16 September 2019}
+\begin{document}
+\maketitle
+\section{}
+x,y,z $-$ целые числа, для которых истинно высказывание \\
+\begin{math}
+\neg(x = y)\wedge((y<x)\rightarrow(2z>x))\wedge((x<y)\rightarrow(x>2z))
+\end{math}
+\\Чему равно $x$, если $z=7, y=16$?
+\\Решение
+\\Если высказывание истинно, то:
+\begin{equation*}
+ \begin{cases}
+   x\neq y\\
+   ((y<x)\rightarrow(2z>x))\\
+   ((x<y)\rightarrow(x>2z))\\
+ \end{cases}
+\end{equation*}
+Если $x>16$, то $y<x$ и $2z<x$, следовательно, второе выражение ложно.\\
+Если $x<14<y$, то $2z>x$, следовательно, третье выражение ложно.\\
+Если $x=15$, то $x<y$ и $x>2z$, следовательно все выражения истинны.
+\\Ответ: 15
+
+
+
+\section{}
+Постройте таблицу истнности для $\neg((x\wedge \neg y) \wedge z)\\$
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ x & y & z & res \\
+ 0 & 0 & 0 & 1 \\ 
+ 0 & 0 & 1 & 1 \\ 
+ 0 & 1 & 0 & 1 \\ 
+ 0 & 1 & 1 & 1 \\
+ 1 & 0 & 0 & 1 \\ 
+ 1 & 0 & 1 & 0 \\
+ 1 & 1 & 0 & 1 \\ 
+ 1 & 1 & 1 & 1 \\ 
+
+ \hline
+\end{tabular}
+\end{center}
+
+\section{}
+Докажите, что\\
+\begin{math}
+1 \oplus x_1 \oplus x_2 = (x_1 \rightarrow x_2) \wedge (x_2 \rightarrow x_1)
+\end{math}
+\\Построим таблицы истинности
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ x_1 & x_2 & res \\
+ 0 & 0 & 1 \\ 
+ 0 & 1 & 0 \\ 
+ 1 & 0 & 0 \\ 
+ 1 & 1 & 1 \\ 
+ \hline
+\end{tabular}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ x_1 & x_2 & res \\
+ 0 & 0 & 1 \\
+ 0 & 1 & 0 \\ 
+ 1 & 0 & 0 \\ 
+ 1 & 1 & 1 \\ 
+ \hline
+\end{tabular}
+\end{center}
+Таблицы совпадают, следовательно равенство выполняется.
+
+
+\section{}
+Выполняется ли дистрибутивность для следующих операций:\\
+а)
+\begin{math}
+x\wedge(y\rightarrow z) ? (x\wedge y) \rightarrow (x\wedge z)
+\end{math}
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ x & y & z & res \\
+ 0 & 0 & 0 & 0 \\ 
+ 1 & 0 & 0 & 1 \\ 
+ 1 & 1 & 0 & 0 \\ 
+ 1 & 1 & 1 & 1 \\ 
+ 0 & 1 & 0 & 0 \\ 
+ 0 & 0 & 1 & 0 \\ 
+ 0 & 1 & 1 & 0 \\
+ 1 & 0 & 1 & 0 \\
+ \hline
+\end{tabular}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ x & y & z & res \\
+ 0 & 0 & 0 & 1 \\ 
+ 1 & 0 & 0 & 1 \\ 
+ 1 & 1 & 0 & 0 \\ 
+ 1 & 1 & 1 & 1 \\ 
+ 0 & 1 & 0 & 1 \\ 
+ 0 & 0 & 1 & 1 \\ 
+ 0 & 1 & 1 & 1 \\
+ 1 & 0 & 1 & 0 \\
+ \hline
+\end{tabular}
+\end{center}
+Таблицы не совпадают, следовательно дистрибутивноть не выполняется.
+
+\\
+б) $x\oplus (y \leftrightarrow z) ? (x \oplus y) \leftrightarrow (x \oplus z)$
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ x & y & z & res \\
+ 0 & 0 & 0 & 1 \\ 
+ 1 & 0 & 0 & 0 \\ 
+ 1 & 1 & 0 & 1 \\ 
+ 1 & 1 & 1 & 0 \\ 
+ 0 & 1 & 0 & 0 \\ 
+ 0 & 0 & 1 & 0 \\ 
+ 0 & 1 & 1 & 1 \\
+ 1 & 0 & 1 & 1 \\
+ \hline
+\end{tabular}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ x & y & z & res \\
+ 0 & 0 & 0 & 1 \\ 
+ 1 & 0 & 0 & 1 \\ 
+ 1 & 1 & 0 & 0 \\ 
+ 1 & 1 & 1 & 1 \\ 
+ 0 & 1 & 0 & 0 \\ 
+ 0 & 0 & 1 & 0 \\ 
+ 0 & 1 & 1 & 1 \\
+ 1 & 0 & 1 & 0 \\
+ \hline
+\end{tabular}
+\end{center}
+Таблицы не совпадают, следовательно дистрибутивноть не выполняется.\\
+\section{}
+а) Выполняется ли для импликации коммутативность?\\
+Очевидно, что $x \rightarrow y$ не равно $y \rightarrow x$ (пример x = 1, y = 0)\\
+б) Выполняется ли для импликации ассоциативность?\\
+$(x\rightarrow y) \rightarrow z ? x \rightarrow (y \rightarrow z)$\\
+Нет, пример $x=0, y=0, z=0$, левая часть 0, правая 1.\\
+\section{}
+Указать существенные и фиктивные переменные\\
+а) $f(x1, x2, x3)=00111100$
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ x_1 & x_2 & x_3 & res \\
+ 0 & 0 & 0 & 0 \\ 
+ 0 & 0 & 1 & 0 \\ 
+ 0 & 1 & 0 & 1 \\ 
+ 0 & 1 & 1 & 1 \\ 
+ 1 & 0 & 0 & 1 \\ 
+ 1 & 0 & 1 & 1 \\ 
+ 1 & 1 & 0 & 0 \\
+ 1 & 1 & 1 & 0 \\
+ \hline
+\end{tabular}
+\end{center}
+z - фиктивная, x и y - существенные
+
+б) $g(x_1, x_2, x_3 = (x_1 \rightarrow (x_1 \vee x_2) \rightarrow x_3$
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ x_1 & x_2 & x_3 & res \\
+ 0 & 0 & 0 & 0 \\ 
+ 0 & 0 & 1 & 1 \\ 
+ 0 & 1 & 0 & 1 \\ 
+ 0 & 1 & 1 & 1 \\ 
+ 1 & 0 & 0 & 0 \\ 
+ 1 & 0 & 1 & 1 \\ 
+ 1 & 1 & 0 & 0 \\
+ 1 & 1 & 1 & 1 \\
+ \hline
+\end{tabular}
+\end{center}
+x, y, z - существенные\\
+\section{}
+Докажите формулу разложения:\\
+$f(x_1,...,x_n)=(x_1 \vee f(0, x_2, ..., x_n)) \wedge (\neg x_1 \vee f(1, x_2, ..., x_n))$
+\\
+Если $x_1=0$, то $(\neg x_1 \vee f(1, x_2, ..., x_n))=1, а (x_1 \vee f(0, x_2, ..., x_n))=f(x_1,...,x_n)$ чтд\\
+Если $x_1=1$, то $(x_1 \vee f(0, x_2, ..., x_n))=1, а (\neg x_1 \vee f(1, x_2, ..., x_n))=f(x_1,...,x_n)$  чтд\\
+\section{}
+Если функция истинна, то каждая $x_n^\alpha=1$, следовательно при замене любого, хотя бы одного $\alpha$, данный x обращается в 0, и вся функция обращается в 0 чтд\\
+\section{}
+$(x_1 \vee x_2 \vee ... \vee x_n) \wedge (\bar x_1 \wedge \bar x_2 \wedge ... \wedge \bar x_n) = (x_1 \wedge \bar x_1) \vee (x_1 \wedge \bar x_2) ...\\ $Так как $(x_i \wedge \bar x_i) = 0$, то:\\
+$(x_1 \vee x_2 \vee ... \vee x_n) \wedge (\bar x_1 \wedge \bar x_2 \wedge ... \wedge \bar x_n) = (x_1 \wedge \bar x_2) \vee (x_2 \wedge \bar x_1) \vee (x_2 \wedge \bar x_3) \vee (x_3 \wedge \bar x_2) \vee ... =\\= (x_1 \oplus x_2) \vee (x_2 \oplus x_3) \vee...)$ чтд.
+\end{document}
