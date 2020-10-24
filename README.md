@@ -6,4 +6,4 @@ I would like to draw your attention in advance to the fact that not all tasks fr
 but usually this is not required from students. 
 The number of correctly solved tasks from each task can also be found in the repository. 
 The solutions are divided into folders, in each folder you can find a .tex file with sources and a converted .pdf file. 
-The folder name is built in the format month_number_year.
+The folder name is built in the format month_day_year.
